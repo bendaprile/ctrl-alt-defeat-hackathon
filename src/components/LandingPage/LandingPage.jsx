@@ -40,6 +40,7 @@ function LandingPage() {
             <TextField id="zip-code" className="zip-field" data-testid="zip-code" label="Zip Code" variant="outlined" />
             <TextField
                 id="summary"
+                className="summary-field"
                 data-testid="summary"
                 label="Summary"
                 multiline

@@ -1,5 +1,4 @@
 .header-area {
-    margin-top: 64px;
     margin-bottom: 64px;
 }
 
@@ -46,4 +45,9 @@
 .zip-field {
     grid-column: 3;
     grid-row: 4;
+}
+
+.summary-field {
+    grid-column: 1 / span 3;
+    grid-row: 5 / span 3;
 }

@@ -11,7 +11,7 @@ import { callChatGPTAPI } from '../../common/api';
 import Button from '@mui/material/Button';
 
 function LandingPage() {
-    const [state, setState] = useState("Test");
+    const [state, setState] = useState("");
     const handleStateChange = (event) => {
         setState(event.target.value)
     }
@@ -51,6 +51,8 @@ function LandingPage() {
                 value={state}
                 label="State"
                 onChange={handleStateChange}
+                displayEmpty={true}
+                renderValue={value => value || "Select State"}
             >
                 {states.map((state, index) => {
                     return <MenuItem value={state.value} key={index}>{state.text}</MenuItem>

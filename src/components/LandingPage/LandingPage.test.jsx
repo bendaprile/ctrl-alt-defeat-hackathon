@@ -41,6 +41,7 @@ test('renders state select field', () => {
     render(<LandingPage />);
     const stateSelect = screen.getByTestId("state-select");
     expect(stateSelect).toBeInTheDocument();
+    expect(stateSelect).toHaveTextContent("Select State");
 });
 
 test('renders zip input field', () => {

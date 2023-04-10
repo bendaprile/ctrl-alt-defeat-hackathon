@@ -33,9 +33,16 @@ test('renders Address Line 2 input field', () => {
 
 test('renders city input field', () => {
     render(<LandingPage />);
-    const addressLine1 = screen.getByTestId("city");
-    expect(addressLine1).toBeInTheDocument();
+    const addressLine2 = screen.getByTestId("city");
+    expect(addressLine2).toBeInTheDocument();
 });
+
+test('renders state select field', () => {
+    render(<LandingPage />);
+    const stateSelect = screen.getByTestId("state-select");
+    expect(stateSelect).toBeInTheDocument();
+});
+
 
 
 

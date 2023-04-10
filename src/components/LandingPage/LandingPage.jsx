@@ -1,6 +1,7 @@
 import './LandingPage.css'
 import logo from "../../images/legalbeagles.jpeg";
 import {TextField} from "@mui/material";
+import Button from '@mui/material/Button';
 import { DateField, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import {states} from "../../common/states";
@@ -16,6 +17,7 @@ function LandingPage() {
     return <div data-testid="landing-page">
         <div className={"header-area"}>
             <img src={logo} className="logo" alt="logo" data-testid="app-logo" />
+            <h1>LegalEASE Intake Form</h1>
         </div>
         <form className={"form-fields"}>
             <TextField id="name" className="name-field" data-testid="name-input" label="Full Legal Name" variant="outlined" />
@@ -47,6 +49,7 @@ function LandingPage() {
                 rows={5}
                 defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
             />
+            <Button className="submit-button" variant="outlined" size="large">Submit</Button>
         </form>
     </div>
 }

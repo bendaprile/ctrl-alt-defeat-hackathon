@@ -51,3 +51,8 @@
     grid-column: 1 / span 3;
     grid-row: 5 / span 3;
 }
+
+.submit-button {
+    grid-column: 1 / span 3;
+    grid-row: 8;
+}

@@ -55,6 +55,12 @@ test('renders summary field', () => {
     expect(summary).toBeInTheDocument();
 });
 
+test('renders submit button', () => {
+    render(<LandingPage />);
+    const submitButton = screen.getByTestId("submit-button");
+    expect(submitButton).toBeInTheDocument();
+});
+
 
 
 

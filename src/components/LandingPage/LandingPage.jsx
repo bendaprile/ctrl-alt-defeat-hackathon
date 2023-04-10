@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select  from '@mui/material/Select';
 import {useState} from "react";
 import { callChatGPTAPI } from '../../common/api';
+import Button from '@mui/material/Button';
 
 function LandingPage() {
     const [state, setState] = useState("Test");
@@ -53,6 +54,7 @@ function LandingPage() {
                 rows={5}
                 defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
             />
+            <Button variant="contained" data-testid="submit-button">Submit</Button>
         </form>
     </div>
 }

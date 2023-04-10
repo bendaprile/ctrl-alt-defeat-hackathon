@@ -15,15 +15,21 @@ function LandingPage() {
     const handleStateChange = (event) => {
         setState(event.target.value)
     }
+
     callChatGPTAPI("Hello world").then((response) => {
         console.log(response);
     }).catch((err) => {
         console.error("oops no go" + err);
     });
+
     return <div data-testid="landing-page">
         <div className={"header-area"}>
             <img src={logo} className="logo" alt="logo" data-testid="app-logo" />
             <h1>LegalEASE Intake Form</h1>
+            <p>Welcome to LegalEASE, powered by ChatGPT! Our intelligent chatbot will guide you through the process of providing us with the necessary information to help us understand your legal needs.
+            <br/><br/>Our goal is to make this process as easy and efficient as possible for you while ensuring that we gather all the necessary information to assist you.
+            <br/><br/>To get started, simply provide us with some basic information about yourself and a short summary of your legal matter. Our chatbot will review and ask any follow-up questions.
+            <br/><br/>Thank you for choosing Legal Beagles Inc.!</p>
         </div>
         <form className={"form-fields"}>
             <TextField id="name" className="name-field" data-testid="name-input" label="Full Legal Name" variant="outlined" />

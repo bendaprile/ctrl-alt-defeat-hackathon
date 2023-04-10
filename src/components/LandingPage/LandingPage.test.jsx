@@ -6,3 +6,9 @@ test('renders name input field', () => {
     const nameInput = screen.getByTestId("name-input");
     expect(nameInput).toBeInTheDocument();
 });
+
+test('renders logo', () => {
+    render(<LandingPage />);
+    const appLogo = screen.getByTestId("app-logo");
+    expect(appLogo).toBeInTheDocument();
+});

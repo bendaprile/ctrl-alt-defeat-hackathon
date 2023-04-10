@@ -1,5 +1,4 @@
 const request = require('supertest');
-const jest = require("jest");
 jest.mock("")
 
 const app = require('./app');

@@ -7,12 +7,18 @@ import {states} from "../../common/states";
 import MenuItem from '@mui/material/MenuItem';
 import Select  from '@mui/material/Select';
 import {useState} from "react";
+import { callChatGPTAPI } from '../../common/api';
 
 function LandingPage() {
     const [state, setState] = useState("Test");
     const handleStateChange = (event) => {
         setState(event.target.value)
     }
+    callChatGPTAPI("Hello world").then((response) => {
+        console.log(response);
+    }).catch((err) => {
+        console.error("oops no go" + err);
+    });
     return <div data-testid="landing-page">
         <div className={"header-area"}>
             <img src={logo} className="logo" alt="logo" data-testid="app-logo" />

@@ -31,5 +31,11 @@ test('renders Address Line 2 input field', () => {
     expect(addressLine1).toBeInTheDocument();
 });
 
+test('renders city input field', () => {
+    render(<LandingPage />);
+    const addressLine1 = screen.getByTestId("city");
+    expect(addressLine1).toBeInTheDocument();
+});
+
 
 

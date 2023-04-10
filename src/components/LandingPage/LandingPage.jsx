@@ -12,6 +12,7 @@ function LandingPage() {
         </LocalizationProvider>
         <TextField id="address-line-1" data-testid="address-line-1" label="Address Line 1" variant="outlined" />
         <TextField id="address-line-2" data-testid="address-line-2" label="Address Line 2 (optional)" variant="outlined" />
+        <TextField id="city" data-testid="city" label="City" variant="outlined" />
     </div>
 }
 

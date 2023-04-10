@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import {callChatGPTAPI} from "../../common/api";
+import Button from "@mui/material/Button";
+import {TextField} from "@mui/material";
 
-function ChatPage() {
+const ChatPage = ({initialText}) => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState("");
     const [response, setResponse] = useState("");
@@ -9,14 +11,15 @@ function ChatPage() {
 
     useEffect(() => {
         // Scroll to the bottom of the messages list on mount or when a new message is added
-        messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        if (messageEndRef) {
+            messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        }
     }, [messages]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         callChatGPTAPI(message).then((response) => {
-            console.log(response);
             setResponse(response);
             setMessages([...messages, { message, response: response }]);
             setMessage("");
@@ -24,7 +27,6 @@ function ChatPage() {
             console.error(err);
         });
     };
-
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
             <div
@@ -47,14 +49,14 @@ function ChatPage() {
                 <div ref={messageEndRef} />
             </div>
             <form onSubmit={handleSubmit} style={{ padding: "1rem" }}>
-                <input
+                <TextField
                     type="text"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Enter your message here"
-                    style={{ marginRight: "1rem" }}
+                    style={{ marginRight: "1rem", width: "500px"}}
                 />
-                <button type="submit">Send</button>
+                <Button type="submit" variant="outlined" size="large" style={{marginTop: "5px"}}>Send</Button>
             </form>
         </div>
     );

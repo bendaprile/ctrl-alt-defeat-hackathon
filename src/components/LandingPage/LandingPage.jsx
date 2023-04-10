@@ -10,22 +10,11 @@ import { useState } from "react";
 import { callChatGPTAPI } from '../../common/api';
 import Button from '@mui/material/Button';
 
-function LandingPage() {
+const LandingPage = ({onSubmit}) => {
   const [state, setState] = useState("");
   const handleStateChange = (event) => {
     setState(event.target.value)
   }
-
-  const handleSubmit = () => {
-    console.log("Clicked");
-    //TODO: Call chat gpt api here and go to next page.
-  }
-
-  callChatGPTAPI("Hello world").then((response) => {
-    console.log(response);
-  }).catch((err) => {
-    console.error("oops no go" + err);
-  });
 
   return <div>
     <div className={"header-area"}>
@@ -73,7 +62,7 @@ function LandingPage() {
         rows={5}
         defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
       />
-      <Button className="submit-button" variant="contained" onClick={handleSubmit} size="large">Submit</Button>
+      <Button className="submit-button" variant="contained" onClick={onSubmit} size="large">Submit</Button>
     </form>
   </div>
 }

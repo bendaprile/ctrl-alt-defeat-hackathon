@@ -38,6 +38,14 @@ function LandingPage() {
                 })}
             </Select>
             <TextField id="zip-code" className="zip-field" data-testid="zip-code" label="Zip Code" variant="outlined" />
+            <TextField
+                id="summary"
+                data-testid="summary"
+                label="Summary"
+                multiline
+                rows={5}
+                defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
+            />
         </form>
     </div>
 }

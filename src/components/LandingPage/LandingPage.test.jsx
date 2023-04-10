@@ -12,3 +12,10 @@ test('renders logo', () => {
     const appLogo = screen.getByTestId("app-logo");
     expect(appLogo).toBeInTheDocument();
 });
+
+test('renders birth-date input field', () => {
+    render(<LandingPage />);
+    const birthDate = screen.getByTestId("birth-date");
+    expect(birthDate).toBeInTheDocument();
+});
+

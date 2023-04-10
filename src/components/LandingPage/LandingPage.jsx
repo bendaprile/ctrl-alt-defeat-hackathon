@@ -1,7 +1,6 @@
 import './LandingPage.css'
 import logo from "../../images/legalbeagles.jpeg";
 import {TextField} from "@mui/material";
-import Button from '@mui/material/Button';
 import { DateField, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import {states} from "../../common/states";
@@ -9,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select  from '@mui/material/Select';
 import {useState} from "react";
 import { callChatGPTAPI } from '../../common/api';
+import Button from '@mui/material/Button';
 
 function LandingPage() {
     const [state, setState] = useState("Test");
@@ -66,7 +66,7 @@ function LandingPage() {
                 rows={5}
                 defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
             />
-            <Button className="submit-button" variant="outlined" onClick={handleSubmit} size="large">Submit</Button>
+            <Button className="submit-button" variant="contained" data-testid="submit-button" onClick={handleSubmit} size="large">Submit</Button>
         </form>
     </div>
 }

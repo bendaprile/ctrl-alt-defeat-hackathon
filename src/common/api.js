@@ -1,8 +1,8 @@
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-    organization: "org-w48mxUVhVu0hjgTOP2FW2fHg",
-    apiKey: "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",
+    organization: "",
+    apiKey: "",
 });
 
 let messages = [

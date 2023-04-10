@@ -1,5 +1,12 @@
 .header-area {
-    margin-bottom: 64px;
+    margin-bottom: 48px;
+}
+
+p {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+    text-align: left;
 }
 
 .form-fields {
@@ -50,4 +57,9 @@
 .summary-field {
     grid-column: 1 / span 3;
     grid-row: 5 / span 3;
+}
+
+.submit-button {
+    grid-column: 1 / span 3;
+    grid-row: 8;
 }

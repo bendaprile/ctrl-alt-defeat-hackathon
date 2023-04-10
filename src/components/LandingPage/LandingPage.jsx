@@ -18,16 +18,17 @@ function LandingPage() {
             <img src={logo} className="logo" alt="logo" data-testid="app-logo" />
         </div>
         <form className={"form-fields"}>
-            <TextField id="name" data-testid="name-input" label="Full Legal Name" variant="outlined" />
+            <TextField id="name" className="name-field" data-testid="name-input" label="Full Legal Name" variant="outlined" />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DateField label="Birth Date" data-testid="birth-date"/>
+                <DateField label="Birth Date" className="date-field" data-testid="birth-date"/>
             </LocalizationProvider>
-            <TextField id="address-line-1" data-testid="address-line-1" label="Address Line 1" variant="outlined" />
-            <TextField id="address-line-2" data-testid="address-line-2" label="Address Line 2 (optional)" variant="outlined" />
-            <TextField id="city" data-testid="city" label="City" variant="outlined" />
+            <TextField id="address-line-1" className="address-1-field" data-testid="address-line-1" label="Address Line 1" variant="outlined" />
+            <TextField id="address-line-2" className="address-2-field" data-testid="address-line-2" label="Address Line 2 (optional)" variant="outlined" />
+            <TextField id="city" className="city-field" data-testid="city" label="City" variant="outlined" />
             <Select
                 id="state-select"
                 data-testid="state-select"
+                className="state-field"
                 value={state}
                 label="State"
                 onChange={handleStateChange}
@@ -36,7 +37,7 @@ function LandingPage() {
                     return <MenuItem value={state.value} key={index}>{state.text}</MenuItem>
                 })}
             </Select>
-            <TextField id="zip-code" data-testid="zip-code" label="Zip Code" variant="outlined" />
+            <TextField id="zip-code" className="zip-field" data-testid="zip-code" label="Zip Code" variant="outlined" />
         </form>
     </div>
 }

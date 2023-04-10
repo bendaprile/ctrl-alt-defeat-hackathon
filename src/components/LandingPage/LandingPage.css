@@ -5,6 +5,45 @@
 
 .form-fields {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.name-field {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+.date-field {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.address-1-field {
+    grid-column: 1 / span 3;
+    grid-row: 2;
+}
+
+.address-2-field {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+}
+
+.city-field {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.state-field {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.zip-field {
+    grid-column: 3;
+    grid-row: 4;
 }

@@ -1,18 +1,21 @@
-import React, { useState, useRef, useEffect } from "react";
-import {callChatGPTAPI} from "../../common/api";
+import React, { useEffect, useRef, useState } from "react";
+import { callChatGPTAPI } from "../../common/api";
 import Button from "@mui/material/Button";
-import {TextField} from "@mui/material";
+import { TextField } from "@mui/material";
+import { useLocation } from "react-router-dom";
 
 const ChatPage = ({initialText}) => {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState("");
     const [response, setResponse] = useState("");
     const messageEndRef = useRef(null);
+    const { state } = useLocation(); // state is any or unknown
 
-    useEffect(() => {
+  useEffect(() => {
         // Scroll to the bottom of the messages list on mount or when a new message is added
         if (messageEndRef) {
             messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
+            messageEndRef.current?.focus({preventScroll: true});
         }
     }, [messages]);
 

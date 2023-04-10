@@ -16,6 +16,11 @@ function LandingPage() {
         setState(event.target.value)
     }
 
+    const handleSubmit = () => {
+        console.log("Clicked");
+        //TODO: Call chat gpt api here and go to next page.
+    }
+
     callChatGPTAPI("Hello world").then((response) => {
         console.log(response);
     }).catch((err) => {
@@ -61,7 +66,7 @@ function LandingPage() {
                 rows={5}
                 defaultValue="Please provide a short summary of your legal matter with as much detail as possible so we can best assist you."
             />
-            <Button className="submit-button" variant="outlined" size="large">Submit</Button>
+            <Button className="submit-button" variant="outlined" onClick={handleSubmit} size="large">Submit</Button>
         </form>
     </div>
 }

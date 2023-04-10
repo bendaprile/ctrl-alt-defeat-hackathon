@@ -43,6 +43,12 @@ test('renders state select field', () => {
     expect(stateSelect).toBeInTheDocument();
 });
 
+test('renders zip input field', () => {
+    render(<LandingPage />);
+    const zipCode = screen.getByTestId("zip-code");
+    expect(zipCode).toBeInTheDocument();
+});
+
 
 
 

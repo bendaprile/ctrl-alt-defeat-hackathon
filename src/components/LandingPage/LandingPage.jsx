@@ -36,6 +36,7 @@ function LandingPage() {
                     return <MenuItem value={state.value} key={index}>{state.text}</MenuItem>
                 })}
             </Select>
+            <TextField id="zip-code" data-testid="zip-code" label="Zip Code" variant="outlined" />
         </form>
     </div>
 }

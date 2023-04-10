@@ -49,6 +49,12 @@ test('renders zip input field', () => {
     expect(zipCode).toBeInTheDocument();
 });
 
+test('renders summary field', () => {
+    render(<LandingPage />);
+    const summary = screen.getByTestId("summary");
+    expect(summary).toBeInTheDocument();
+});
+
 
 
 

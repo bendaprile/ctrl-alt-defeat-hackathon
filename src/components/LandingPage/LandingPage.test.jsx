@@ -19,3 +19,10 @@ test('renders birth-date input field', () => {
     expect(birthDate).toBeInTheDocument();
 });
 
+test('renders Address Line 1 input field', () => {
+    render(<LandingPage />);
+    const addressLine1 = screen.getByTestId("address-line-1");
+    expect(addressLine1).toBeInTheDocument();
+});
+
+

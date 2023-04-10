@@ -1,5 +1,4 @@
 export const states = [
-    { text: "Select State", value: "" },
     { text: "Alabama", value: "AL" },
     { text: "Alaska", value: "AK" },
     { text: "Arizona", value: "AZ" },
